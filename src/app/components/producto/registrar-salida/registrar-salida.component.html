@@ -1,0 +1,17 @@
+<!--Contenido---------------------------------------------------------------------------------------->
+<div class="center">
+  <table bgcolor=#cccccc>
+    <tr>
+      <td>
+        <div style="text-align: center;">
+          <h1> Registrar Movimiento</h1>
+          <div>
+            ID: {{producto.id}}<br><br>
+            Nombre: {{producto.nombre}}<br><br><br>
+            Existencias: {{producto.cantidadExistencia}}{{producto.unidadMedida}}<br><br>
+            Cantidad <input type="number" [(ngModel)]="movimiento.cantidad" [value]= "movimiento.cantidad" name="punto_reorden"><br><br>
+          </div>
+          <div class="center" *ngIf = "producto.id != 0"><input type="button" name="agregar_producto" value="Guardar" (click) = "registrarSalida()"></div>
+      
+   
+  

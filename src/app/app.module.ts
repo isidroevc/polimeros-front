@@ -11,6 +11,7 @@ import { ProductoService } from './providers/producto/producto.service';
 import { ListarProductoComponent } from './components/producto/listar-producto/listar-producto.component';
 import { EliminarProductoComponent } from './components/producto/eliminar-producto/eliminar-producto.component';
 import { RegistrarEntradaComponent } from './components/producto/registrar-entrada/registrar-entrada.component';
+import { RegistrarSalidaComponent } from './components/producto/registrar-salida/registrar-salida.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { RegistrarEntradaComponent } from './components/producto/registrar-entra
     MenuComponent,
     ListarProductoComponent,
     EliminarProductoComponent,
-    RegistrarEntradaComponent
+    RegistrarEntradaComponent,
+    RegistrarSalidaComponent
   ],
   imports: [
     BrowserModule,

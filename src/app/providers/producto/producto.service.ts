@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Producto } from '../../models/producto.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { BaseServiceService } from '../base-service.service';
+import { Movimiento } from 'src/app/models/movimiento.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -36,5 +37,13 @@ export class ProductoService extends BaseServiceService {
 
   eliminar(id: number): Observable<Producto> {
     return this.http.post<Producto>(`${this.baseUrl}Producto/eliminarProducto/${id}`, {}, {});
+  }
+
+  registrarMovimiento(movimiento: Movimiento):Observable<Movimiento> {
+    return this.http.post<Movimiento>(`${this.baseUrl}Producto/registrarMovimiento`, movimiento, {});
+  }
+
+  listarMovimientos(idProducto, tipo):Observable<Movimiento[]> {
+    return this.http.get<Movimiento[]>(`${this.baseUrl}Producto/listarMovimientos?idProducto=${idProducto}&tipo=${tipo}`, {});
   }
 }
