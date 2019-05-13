@@ -1,0 +1,31 @@
+table.lista { 
+
+}
+
+table.lista th{
+    background-color: gray;
+
+}
+table.lista td {
+    text-align: center;
+    margin: 15px;
+}
+
+button.eliminar {
+    color: white;
+    background-color: red;
+}
+
+button.editar {
+    color: white;
+    background-color: blue;
+}
+
+div.contenedor-buscar {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 25px;
+}
+
+

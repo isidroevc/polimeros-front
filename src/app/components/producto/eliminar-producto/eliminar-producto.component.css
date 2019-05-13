@@ -1,0 +1,30 @@
+button.si {
+    background-color: red;
+    color: white;
+    font-size: 25px;
+    margin: 5px;
+}
+
+button.no {
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    margin: 5px;
+}
+
+div.contenedor-botones {
+    margin-top: 20px;
+}
+
+table.lista th{
+    background-color: gray;
+
+}
+table.lista td {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    width: 100%;
+}

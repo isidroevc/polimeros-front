@@ -1,0 +1,22 @@
+<!--Contenido---------------------------------------------------------------------------------------->
+<div class="center">
+<table bgcolor=#cccccc>
+  <tr>
+    <td>
+      <div style="text-align: center;">
+        <h1 *ngIf = "producto.id == 0">Agregar producto</h1>
+        <h1 *ngIf = "producto.id != 0"> Modificar producto</h1>
+        <div>
+          Nombre <input type="text" [(ngModel)]="producto.nombre" name="nombre" [value]= "producto.nombre"  ><br><br>
+          Proveedor <select [(ngModel)]="producto.idProveedor">
+            <option  value="0" selected = "true">Seleccione un Proveedor</option>
+            <option *ngFor="let proveedor of proveedores" [value]="proveedor.id" selected = "{{proveedor.id == producto.idProveedor}}">{{proveedor.nombre}}</option>
+          </select><br><br>
+          Existencias <input type="number" [(ngModel)]="producto.cantidadExistencia"  [value]= "producto.cantidadExistencia" name="existencias"><br><br>
+          Unidad de medida <input type="text" [(ngModel)]="producto.unidadMedida" [value]= "producto.unidadMedida" name="undidad_medida"><br><br>
+          Punto de reorden <input type="number" [(ngModel)]="producto.puntoReorden" [value]= "producto.puntoReorden" name="punto_reorden"><br><br>
+        </div>
+        <div class="center" *ngIf = "producto.id == 0"><input type="button" name="agregar_producto" value="Agregar" (click) = "agregarProducto()"></div>
+        <div class="center" *ngIf = "producto.id != 0"><input type="button" name="agregar_producto" value="Guardar" (click) = "agregarProducto()"></div>
+    
+ 

@@ -1,0 +1,61 @@
+<div class="contenedor-buscar">
+    <label for="buscar">
+      Buscar
+    </label>
+    <input type="text" name="buscar" [(ngModel)]="parametro">
+    <button class="buscar" (click)=listarProductos()>Buscar</button>
+  </div>
+
+<div class="center">
+  <table class="lista">
+    <thead>
+      <tr>
+        <th>
+          ID
+        </th>
+        <th>
+          Nombre
+        </th>
+        <th>
+          Proveedor
+        </th>
+        <th>
+          Existencias
+        </th>
+        <th>
+          Unidad
+        </th>
+        <th>
+          Punto Reorden
+        </th>
+        <th>
+          Entradas
+        </th>
+        <th>
+          Salidas
+        </th>
+        <th>
+          Editar
+        </th>
+        <th>
+          Eliminar
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.id}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.proveedor.nombre}}</td>
+        <td>{{producto.cantidadExistencia}}</td>
+        <td>{{producto.unidadMedida}}</td>
+        <td>{{producto.puntoReorden}}</td>
+        <td>{{producto.entradas}}</td>
+        <td>{{producto.salidas}}</td>
+        <td><a routerLink="/Producto/modificarProducto/{{producto.id}}"><button class="editar"> Editar </button></a></td>
+        <td><a routerLink="/Producto/eliminarProducto/{{producto.id}}"><button class="eliminar"
+         > Eliminar </button></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

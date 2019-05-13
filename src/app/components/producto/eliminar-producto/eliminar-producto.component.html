@@ -1,0 +1,51 @@
+<h4>Esta seguro que quiere eliminar el siguiente producto?</h4>
+>
+
+<div class = "center">
+    <table class="lista">
+        <thead>
+          <tr>
+            <th>
+              ID
+            </th>
+            <th>
+              Nombre
+            </th>
+            <th>
+              Proveedor
+            </th>
+            <th>
+              Existencias
+            </th>
+            <th>
+              Unidad
+            </th>
+            <th>
+              Punto Reorden
+            </th>
+            <th>
+              Entradas
+            </th>
+            <th>
+              Salidas
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{producto.id}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.proveedor.nombre}}</td>
+            <td>{{producto.cantidadExistencia}}</td>
+            <td>{{producto.unidadMedida}}</td>
+            <td>{{producto.puntoReorden}}</td>
+            <td>{{producto.entradas}}</td>
+            <td>{{producto.salidas}}</td>
+        </tbody>
+      </table>
+</div>
+
+<div class="center contenedor-botones">
+  <button (click) = "eliminarProducto()"class="si">Si</button>
+  <button class="no">No</button>
+</div>
