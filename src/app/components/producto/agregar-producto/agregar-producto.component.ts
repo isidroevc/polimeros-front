@@ -5,6 +5,7 @@ import { Producto } from '../../../models/producto.model';
 import { Proveedor } from '../../../models/proveedor.model';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from '@angular/router';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-agregar-producto',
@@ -17,7 +18,10 @@ export class AgregarProductoComponent implements OnInit {
   constructor(public proveedorService: ProveedorService,
               public productoService: ProductoService,
               public router: Router,
-              public activatedRoute: ActivatedRoute) { }
+              public activatedRoute: ActivatedRoute,
+              public title:Title) {
+                this.title.setTitle('Agregar Producto');
+               }
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.params.id;

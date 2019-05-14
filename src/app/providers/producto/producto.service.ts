@@ -43,7 +43,14 @@ export class ProductoService extends BaseServiceService {
     return this.http.post<Movimiento>(`${this.baseUrl}Producto/registrarMovimiento`, movimiento, {});
   }
 
-  listarMovimientos(idProducto, tipo):Observable<Movimiento[]> {
-    return this.http.get<Movimiento[]>(`${this.baseUrl}Producto/listarMovimientos?idProducto=${idProducto}&tipo=${tipo}`, {});
+  listarMovimientos(tipo:string, parametro:string, orden:string):Observable<Movimiento[]> {
+    let params:any = {};
+    parametro = parametro.trim();
+    if(tipo !== 'Todos')
+      params.tipo = tipo;
+    if(parametro !== '')
+      params.parametro =  parametro;
+    params.orden = orden;
+    return this.http.get<Movimiento[]>(`${this.baseUrl}Producto/listarMovimientos`, {params: params});
   }
 }

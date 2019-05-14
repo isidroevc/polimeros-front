@@ -12,6 +12,10 @@ import { ListarProductoComponent } from './components/producto/listar-producto/l
 import { EliminarProductoComponent } from './components/producto/eliminar-producto/eliminar-producto.component';
 import { RegistrarEntradaComponent } from './components/producto/registrar-entrada/registrar-entrada.component';
 import { RegistrarSalidaComponent } from './components/producto/registrar-salida/registrar-salida.component';
+import { ListarMovimientosComponent } from './components/producto/listar-movimientos/listar-movimientos.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +24,10 @@ import { RegistrarSalidaComponent } from './components/producto/registrar-salida
     ListarProductoComponent,
     EliminarProductoComponent,
     RegistrarEntradaComponent,
-    RegistrarSalidaComponent
+    RegistrarSalidaComponent,
+    ListarMovimientosComponent
   ],
+
   imports: [
     BrowserModule,
     APP_ROUTING,

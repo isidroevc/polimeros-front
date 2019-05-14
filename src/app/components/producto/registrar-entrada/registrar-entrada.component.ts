@@ -3,6 +3,7 @@ import  { ActivatedRoute, Router } from '@angular/router';
 import  { ProductoService } from  '../../../providers/producto/producto.service';
 import  { Producto }  from '../../../models/producto.model';
 import  { Movimiento }  from '../../../models/movimiento.model';
+import  { Title } from "@angular/platform-browser";
 @Component({
   selector: 'app-registrar-entrada',
   templateUrl: './registrar-entrada.component.html',
@@ -12,7 +13,12 @@ export class RegistrarEntradaComponent implements OnInit {
 
   movimiento:Movimiento = new Movimiento();
   producto:Producto = new Producto();
-  constructor(public productoService: ProductoService, public activatedRoute: ActivatedRoute, public router: Router) { }
+  constructor(public productoService: ProductoService,
+              public activatedRoute: ActivatedRoute,
+              public router: Router,
+              public title:Title) { 
+                this.title.setTitle('Registrar Entrada');
+              }
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.params.id;
